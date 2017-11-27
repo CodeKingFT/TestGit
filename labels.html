@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    function Validate() {
+        var txt_Name = document.getElementById("txt_name");
+        var button = document.getElementById("btnValidate");
+        var form = document.getElementById("testform");
+        if (txt_Name.value.trim() == "") {
+            var label = document.createElement("label");
+            label.setAttribute("for", "txt_name");
+            form.insertBefore(label, button);
+            txt_Name.label[1].innerHTML = "请输名字";
+            txt_Name.label[1].setAttribute("style", "font-size:9px", "color:red");
+        }
+    }
+</script>
+<form id="testform">
+    <label id="label" for="txt_name">姓名</label>
+    <input id="txt_name">
+    <input type="button" id="btnValidate" value="验证" onclick="Validate()">
+
+</form>
+
+</body>
+</html>
